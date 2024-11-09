@@ -73,8 +73,8 @@ class TournamentTest(unittest.TestCase):
         self.func(Tournament(90, self.run2, self.run1), ind=4)
 
 
-    def func(self, race, ind):
-        result = race.start()
+    def func(self, tournament, ind):
+        result = tournament.start()
         loser = result.get(max(result.keys()))
         self.assertTrue(loser == 'Ник' or loser =="Андрей" or loser == "Усэйн")
         self.all_results[ind] = result
