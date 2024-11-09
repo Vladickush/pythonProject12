@@ -60,22 +60,25 @@ class TournamentTest(unittest.TestCase):
     def tearDownClass(cls):
         pprint.pprint(cls.all_results)
 
-
     def test_1(self):
         race = Tournament(90, self.nick, self.usain)
-        self.test(race)
+        result = race.start()
+        loser = result.get(max(result.keys()))
+        self.assertTrue(loser == 'Ник')
+        self.all_results[1] = result
 
     def test_2(self):
         race = Tournament(90, self.nick, self.andrey)
-        self.test(race)
+        result = race.start()
+        loser = result.get(max(result.keys()))
+        self.assertTrue(loser == 'Ник')
+        self.all_results[2] = result
 
     def test_3(self):
         race = Tournament(90, self.andrey, self.nick, self.usain)
-        self.test(race)
-
-    def test(self, race):
         result = race.start()
         loser = result.get(max(result.keys()))
         self.assertTrue(loser == 'Ник')
         self.all_results[3] = result
+
 
