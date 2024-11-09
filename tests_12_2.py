@@ -52,25 +52,25 @@ class TournamentTest(unittest.TestCase):
         cls.all_results = {}
 
     def setUp(self):
-        self.usain = Runner("Усэйн", 10)
-        self.andrey = Runner("Андрей", 9)
-        self.nick = Runner("Ник", 3)
+        self.run1 = Runner("Усэйн", 10)
+        self.run2 = Runner("Андрей", 9)
+        self.run3 = Runner("Ник", 3)
 
     @classmethod
     def tearDownClass(cls):
         pprint.pprint(cls.all_results)
 
     def test_1(self):
-        self.func(Tournament(90, self.nick, self.usain), ind=1)
+        self.func(Tournament(90, self.run3, self.run1), ind=1)
 
     def test_2(self):
-        self.func(Tournament(90, self.nick, self.andrey), ind=2)
+        self.func(Tournament(90, self.run3, self.run2), ind=2)
 
     def test_3(self):
-        self.func(Tournament(90, self.andrey, self.nick, self.usain), ind=3)
+        self.func(Tournament(90, self.run2, self.run3, self.run1), ind=3)
 
     def test_4(self):
-        self.func(Tournament(90, self.andrey, self.usain), ind=4)
+        self.func(Tournament(90, self.run2, self.run1), ind=4)
 
 
     def func(self, race, ind):
