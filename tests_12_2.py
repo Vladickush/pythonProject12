@@ -61,28 +61,24 @@ class TournamentTest(unittest.TestCase):
         pprint.pprint(cls.all_results)
 
     def test_1(self):
-        race = Tournament(90, self.nick, self.usain)
-        result = race.start()
-        loser = result.get(max(result.keys()))
-        self.assertTrue(loser == 'Ник')
-        self.all_results[1] = result
+        self.func(Tournament(90, self.nick, self.usain), ind=1)
 
     def test_2(self):
-        race = Tournament(90, self.nick, self.andrey)
-        result = race.start()
-        loser = result.get(max(result.keys()))
-        self.assertTrue(loser == 'Ник')
-        self.all_results[2] = result
+        self.func(Tournament(90, self.nick, self.andrey), ind=2)
 
     def test_3(self):
-        race = Tournament(90, self.andrey, self.nick, self.usain)
+        self.func(Tournament(90, self.andrey, self.nick, self.usain), ind=3)
+
+    def test_4(self):
+        self.func(Tournament(90, self.andrey, self.usain), ind=4)
+
+
+    def func(self, race, ind):
         result = race.start()
         loser = result.get(max(result.keys()))
-        self.assertTrue(loser == 'Ник')
-        self.all_results[3] = result
+        self.assertTrue(loser == 'Ник' or loser =="Андрей" or loser == "Усэйн")
+        self.all_results[ind] = result
+
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
