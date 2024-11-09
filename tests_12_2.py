@@ -12,7 +12,7 @@ class Runner:
     def run(self):
         self.distance += self.speed * 2
 
-    """  Эти методы не вызываются и я их закоментировал
+    """  Эти методы не вызываются и я их заковычил
     def walk(self):
         self.distance += self.speed
 
