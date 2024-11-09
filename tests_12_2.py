@@ -81,4 +81,8 @@ class TournamentTest(unittest.TestCase):
         self.assertTrue(loser == 'Ник')
         self.all_results[3] = result
 
+if __name__ == '__main__':
+    unittest.main()
+
+
 
