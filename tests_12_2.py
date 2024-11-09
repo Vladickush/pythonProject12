@@ -54,7 +54,7 @@ class TournamentTest(unittest.TestCase):
     def setUp(self):
         self.run1 = Runner("Усэйн", 10)
         self.run2 = Runner("Андрей", 9)
-        self.run3 = Runner("Ник", 3)
+        self.run3 = Runner("Ник")
 
     @classmethod
     def tearDownClass(cls):
